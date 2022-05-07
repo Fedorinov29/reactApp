@@ -7,7 +7,7 @@ const Nav = () => {
         <a href="-">Profile</a>
       </div>
       <div>
-        <a href="-">Messages</a>
+        <a href="-">Messagess</a>
       </div>
       <div>
         <a href="-">News</a>
