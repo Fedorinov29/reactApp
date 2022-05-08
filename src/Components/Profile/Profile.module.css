@@ -1,0 +1,11 @@
+.content {
+  grid-area: c;
+  background-color: yellow;
+  padding: 5px;
+}
+
+.content .bg {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+}
