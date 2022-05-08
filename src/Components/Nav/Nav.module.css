@@ -5,7 +5,11 @@
   padding: 5px;
 }
 
-.nav a {
+.item {
   color: white;
   text-decoration: none;
+}
+
+.item.active {
+  color: gold;
 }
