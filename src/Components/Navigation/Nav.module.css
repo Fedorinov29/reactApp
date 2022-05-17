@@ -3,6 +3,9 @@
   background-color: #156;
   text-align: center;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .item a {

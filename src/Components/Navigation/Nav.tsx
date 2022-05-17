@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import FriendOnline from "./FriendOnline/FriendOnline";
 import s from "./Nav.module.css";
 
-const Nav = () => {
+const Nav = (props: any) => {
   let activeStyle: any = {
     color: "gold",
   };
@@ -48,6 +49,7 @@ const Nav = () => {
           Settings
         </NavLink>
       </div>
+      <FriendOnline state={props.state.sideBar} />
     </nav>
   );
 };
