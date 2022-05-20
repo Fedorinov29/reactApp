@@ -4,7 +4,6 @@ import "./App.css";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import Header from "./Components/Header/Header";
 import Music from "./Components/Music/Music";
-import FriendOnline from "./Components/Navigation/FriendOnline/FriendOnline";
 import Nav from "./Components/Navigation/Nav";
 import News from "./Components/News/News";
 import Profile from "./Components/Profile/Profile";
@@ -24,13 +23,17 @@ const App: any = (props: any) => {
             />
             <Route
               path="/profile"
-              element={<Profile state={props.state.profilePage} />}
+              element={
+                <Profile
+                  state={props.state.profilePage}
+                  addPost={props.addPost}
+                />
+              }
             />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-          {/* <FriendOnline state={props.state.sideBar} /> */}
         </div>
       </div>
     </BrowserRouter>

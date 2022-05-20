@@ -3,7 +3,6 @@ import Friend from "./Friend/Friend";
 import s from "./FriendOnline.module.css";
 
 const FriendOnline = (props: any) => {
-  debugger;
   let friendsOnline = props.state.friendOnline.map((f: any) => (
     <Friend id={f.id} friendName={f.friendName} friendAva={f.friendAva} />
   ));
