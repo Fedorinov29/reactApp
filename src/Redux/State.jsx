@@ -7,6 +7,7 @@ let state = {
       { id: 2, message: "And now i will show you ...", likesCount: 23 },
       { id: 3, message: "russian warship go fuck yourself", likesCount: 999 },
     ],
+    newPostText: "Learn React!!!",
   },
   dialogsPage: {
     dialogData: [
@@ -70,13 +71,21 @@ let state = {
   },
 };
 
-export let addNewPost = (postMessage) => {
+window.state = state;
+
+export let addNewPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
 

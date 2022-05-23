@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import Header from "./Components/Header/Header";
@@ -11,32 +11,31 @@ import Settings from "./Components/Settings/Settings";
 
 const App: any = (props: any) => {
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Nav state={props.state} />
-        <div className="app-wrapper-content">
-          <Routes>
-            <Route
-              path="/dialogs/*"
-              element={<Dialogs state={props.state.dialogsPage} />}
-            />
-            <Route
-              path="/profile"
-              element={
-                <Profile
-                  state={props.state.profilePage}
-                  addPost={props.addPost}
-                />
-              }
-            />
-            <Route path="/news" element={<News />} />
-            <Route path="/music" element={<Music />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </div>
+    <div className="app-wrapper">
+      <Header />
+      <Nav state={props.state} />
+      <div className="app-wrapper-content">
+        <Routes>
+          <Route
+            path="/dialogs/*"
+            element={<Dialogs state={props.state.dialogsPage} />}
+          />
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                profilePage={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
+              />
+            }
+          />
+          <Route path="/news" element={<News />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 
