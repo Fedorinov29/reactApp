@@ -44,9 +44,10 @@ let state = {
     ],
     messagesData: [
       { id: 1, message: "Hi!" },
-      { id: 1, message: "How is your progress in React?" },
-      { id: 1, message: "Yo bro!" },
+      { id: 2, message: "How is your progress in React?" },
+      { id: 3, message: "Yo bro!" },
     ],
+    newMessageText: "train redux concept!",
   },
   sideBar: {
     friendOnline: [
@@ -71,8 +72,6 @@ let state = {
   },
 };
 
-window.state = state;
-
 export let addNewPost = () => {
   let newPost = {
     id: 5,
@@ -86,6 +85,21 @@ export let addNewPost = () => {
 
 export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+};
+
+export let sendNewMessage = () => {
+  let newMessage = {
+    id: 4,
+    message: state.dialogsPage.newMessageText,
+  };
+  state.dialogsPage.messagesData.push(newMessage);
+  state.dialogsPage.newMessageText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+  state.dialogsPage.newMessageText = newText;
   rerenderEntireTree(state);
 };
 

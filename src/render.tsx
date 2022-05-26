@@ -2,7 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { addNewPost, updateNewPostText } from "./Redux/State";
+import {
+  addNewPost,
+  sendNewMessage,
+  updateNewMessageText,
+  updateNewPostText,
+} from "./Redux/State";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
@@ -16,6 +21,8 @@ export let rerenderEntireTree = (state: any) => {
           state={state}
           addPost={addNewPost}
           updateNewPostText={updateNewPostText}
+          sendNewMessage={sendNewMessage}
+          updateNewMessageText={updateNewMessageText}
         />
       </React.StrictMode>
     </BrowserRouter>
