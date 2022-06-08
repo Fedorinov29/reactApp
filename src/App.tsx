@@ -30,6 +30,7 @@ const App: any = (props: any) => {
             element={
               <Profile
                 profilePage={props.state.profilePage}
+                sideBar={props.state.sideBar}
                 dispatch={props.dispatch}
               />
             }
