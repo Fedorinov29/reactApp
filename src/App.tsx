@@ -13,15 +13,16 @@ const App: any = (props: any) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Nav state={props.state} />
+      <Nav store={props.store} state={props.state} />
       <div className="app-wrapper-content">
         <Routes>
           <Route
             path="/dialogs/*"
             element={
               <Dialogs
-                dialogsPage={props.state.dialogsPage}
-                dispatch={props.dispatch}
+                // dialogsPage={props.state.dialogsPage}
+                // dispatch={props.dispatch}
+                store={props.store}
               />
             }
           />
@@ -29,9 +30,10 @@ const App: any = (props: any) => {
             path="/profile"
             element={
               <Profile
-                profilePage={props.state.profilePage}
-                sideBar={props.state.sideBar}
-                dispatch={props.dispatch}
+                // profilePage={props.state.profilePage}
+                // sideBar={props.state.sideBar}
+                // dispatch={props.dispatch}
+                store={props.store}
               />
             }
           />

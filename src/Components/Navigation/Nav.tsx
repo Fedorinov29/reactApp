@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import FriendOnline from "./FriendOnline/FriendOnline";
 import s from "./Nav.module.css";
@@ -49,7 +48,7 @@ const Nav = (props: any) => {
           Settings
         </NavLink>
       </div>
-      <FriendOnline state={props.state.sideBar} />
+      <FriendOnline state={props.state.sideBar.sideBar} />
     </nav>
   );
 };

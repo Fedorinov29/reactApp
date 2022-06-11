@@ -8,20 +8,23 @@ import s from "./Dialogs.module.css";
 import MessageItem from "./Message/Message";
 
 const Dialogs = (props: any) => {
-  let dialogs = props.dialogsPage.dialogData.map((d: any) => (
+  // debugger;
+  let state = props.store.getState().dialogsPage;
+
+  let dialogs = state.dialogData.map((d: any) => (
     <DialogItem name={d.name} id={d.id} ava={d.ava} />
   ));
-  let messages = props.dialogsPage.messagesData.map((m: any) => (
+  let messages = state.messagesData.map((m: any) => (
     <MessageItem message={m.message} />
   ));
 
   let sendNewMessage = () => {
-    props.dispatch(addMessageActionCreator());
+    props.store.dispatch(addMessageActionCreator());
   };
 
   let onMessageChange = (e: any) => {
     let text = e.target.value;
-    props.dispatch(updateNewMessageTextActionCreator(text));
+    props.store.dispatch(updateNewMessageTextActionCreator(text));
   };
 
   return (
