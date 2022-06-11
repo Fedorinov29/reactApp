@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Dialogs from "./Components/Dialogs/Dialogs";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import Header from "./Components/Header/Header";
 import Music from "./Components/Music/Music";
 import Nav from "./Components/Navigation/Nav";
@@ -19,7 +20,7 @@ const App: any = (props: any) => {
           <Route
             path="/dialogs/*"
             element={
-              <Dialogs
+              <DialogsContainer
                 // dialogsPage={props.state.dialogsPage}
                 // dispatch={props.dispatch}
                 store={props.store}
