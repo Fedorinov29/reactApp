@@ -10,24 +10,16 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-let rerenderEntireTree: any = (state: any) => {
+let rerenderEntireTree: any = () => {
   root.render(
     <BrowserRouter>
       <React.StrictMode>
         <Provider store={store}>
-          <App
-            state={state}
-            dispatch={store.dispatch.bind(store)}
-            store={store}
-          />
+          <App />
         </Provider>
       </React.StrictMode>
     </BrowserRouter>
   );
 };
 
-rerenderEntireTree(store.getState());
-store.subscribe(() => {
-  let state = store.getState();
-  rerenderEntireTree(state);
-});
+rerenderEntireTree();

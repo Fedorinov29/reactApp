@@ -48,7 +48,7 @@ const Nav = (props: any) => {
           Settings
         </NavLink>
       </div>
-      <FriendOnline state={props.state.sideBar.sideBar} />
+      <FriendOnline state={props.sideBar.sideBar} />
     </nav>
   );
 };
