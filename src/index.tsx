@@ -10,16 +10,12 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-let rerenderEntireTree: any = () => {
-  root.render(
-    <BrowserRouter>
-      <React.StrictMode>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </React.StrictMode>
-    </BrowserRouter>
-  );
-};
-
-rerenderEntireTree();
+root.render(
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>
+);
