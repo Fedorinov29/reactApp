@@ -6,9 +6,10 @@ import {
 import Dialogs from "./Dialogs";
 
 let mapStateToProps = (state: any) => {
+  // debugger;
   return {
     dialogsPage: state.dialogsPage,
-    newMessageText: state.newMessageText,
+    newMessageText: state.dialogsPage.newMessageText,
   };
 };
 let mapDispatchToProps = (dispatch: any) => {

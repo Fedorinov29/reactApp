@@ -1,11 +1,8 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import Header from "./Components/Header/Header";
 import Music from "./Components/Music/Music";
-import Nav from "./Components/Navigation/Nav";
 import NavContainer from "./Components/Navigation/NavContainer";
 import News from "./Components/News/News";
 import Profile from "./Components/Profile/Profile";

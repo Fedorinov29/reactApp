@@ -4,7 +4,12 @@ import s from "./FriendOnline.module.css";
 
 const FriendOnline = (props: any) => {
   let friendsOnline = props.state.friendOnline.map((f: any) => (
-    <Friend id={f.id} friendName={f.friendName} friendAva={f.friendAva} />
+    <Friend
+      id={f.id}
+      friendName={f.friendName}
+      key={f.id}
+      friendAva={f.friendAva}
+    />
   ));
   return (
     <div className={s.frOnline}>
