@@ -7,6 +7,7 @@ import NavContainer from "./Components/Navigation/NavContainer";
 import News from "./Components/News/News";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 const App: any = (props: any) => {
   return (
@@ -19,6 +20,7 @@ const App: any = (props: any) => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
+          <Route path="/users" element={<UsersContainer />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>

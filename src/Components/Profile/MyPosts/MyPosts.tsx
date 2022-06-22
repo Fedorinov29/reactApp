@@ -11,13 +11,11 @@ const MyPosts = (props: any) => {
 
   let onAddPost = (): any => {
     props.addPost();
-    // props.dispatch(addPostActionCreator());
   };
 
   let onPostChange = (): any => {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
-    // props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   return (
