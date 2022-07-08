@@ -1,27 +1,66 @@
 import axios from "axios";
 import React from "react";
 import userPhoto from "../../assets/images/user.png";
+import s from "./Users.module.css";
 
 class Users extends React.Component<{
   users: any;
   setUsers: any;
   follow: any;
   unfollow: any;
+  totalUsersCount: any;
+  pageSize: any;
+  currentPage: any;
+  setCurrentPage: any;
+  setTotalUsersCount: any;
 }> {
-  getUsers = (): any => {
-    if (this.props.users.length === 0) {
-      axios
-        .get("https://social-network.samuraijs.com/api/1.0/users")
-        .then((response) => {
-          this.props.setUsers(response.data.items);
-        });
-    }
+  componentDidMount() {
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+        this.props.setTotalUsersCount(response.data.totalCount);
+      });
+  }
+
+  onPAgeChenge = (pageNumber: any) => {
+    this.props.setCurrentPage(pageNumber);
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
   };
 
   render() {
+    let pagesCount = this.props.totalUsersCount / this.props.pageSize;
+    let pages = [];
+    for (let i = 1; i <= Math.ceil(10); i++) {
+      pages.push(i);
+    }
+
     return (
       <div>
-        <button onClick={this.getUsers}>Upload Users</button>
+        <div>
+          {pages.map((p) => {
+            return (
+              <span
+                // key={p.id}
+                className={this.props.currentPage === p ? s.activePage : ""}
+                onClick={(e) => {
+                  this.onPAgeChenge(p);
+                }}
+              >
+                {p}
+              </span>
+            );
+          })}
+        </div>
+
         {this.props.users.map((u: any) => {
           return (
             <div key={u.id}>

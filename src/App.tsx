@@ -9,7 +9,7 @@ import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import UsersContainer from "./Components/Users/UsersContainer";
 
-const App: any = (props: any) => {
+const App: any = () => {
   return (
     <div className="app-wrapper">
       <Header />

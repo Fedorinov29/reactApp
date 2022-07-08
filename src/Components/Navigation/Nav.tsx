@@ -48,6 +48,14 @@ const Nav = (props: any) => {
           Settings
         </NavLink>
       </div>
+      <div className={s.item}>
+        <NavLink
+          to="/users"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          Users
+        </NavLink>
+      </div>
       <FriendOnline state={props.sideBar.sideBar} />
     </nav>
   );
