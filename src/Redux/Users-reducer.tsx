@@ -51,9 +51,9 @@ const UsersReducer = (state = initialState, action: any) => {
   }
 };
 
-export const followAC = (userID: number) => ({ type: FOLLOW, userID });
+export const followAC = (userID: any) => ({ type: FOLLOW, userID });
 
-export const unfollowAC = (userID: number) => ({
+export const unfollowAC = (userID: any) => ({
   type: UNFOLLOW,
   userID,
 });
